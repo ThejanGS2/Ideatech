@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Ideatech (PVT) LTD</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div id="header-placeholder"></div>
+
+    <main>
+        <section class="page-header visible">
+            <div class="container">
+                <div class="intro-meta">Insights</div>
+                <h1>News &<br>Updates.</h1>
+                <p style="font-size: 1.2rem;">Thoughts on technology, design, and the future of digital.</p>
+            </div>
+        </section>
+
+        <div class="container">
+            <section id="blog-grid">
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 3rem;">
+
+                    <!-- Article 1 -->
+                    <article class="card" style="padding: 0; overflow: hidden;">
+                        <div
+                            style="height: 240px; background: linear-gradient(135deg, var(--light-green) 0%, var(--primary-green) 100%); display: flex; align-items: center; justify-content: center; color: white; font-weight: 600;">
+                            [Article Image]
+                        </div>
+                        <div style="padding: 2.5rem;">
+                            <span class="badge green">Technology</span>
+                            <h3 style="margin-top: 1rem; font-size: 1.5rem;"><a href="#"
+                                    style="color: var(--text-dark);">The Future of Super Apps in South Asia</a></h3>
+                            <p>How consolidated digital ecosystems are reshaping the way we interact with services in
+                                the region.</p>
+                            <span style="font-size: 0.9rem; color: var(--text-gray);">Jan 15, 2026</span>
+                        </div>
+                    </article>
+
+                    <!-- Article 2 -->
+                    <article class="card" style="padding: 0; overflow: hidden;">
+                        <div
+                            style="height: 240px; background: linear-gradient(135deg, var(--pink) 0%, #FF6B9D 100%); display: flex; align-items: center; justify-content: center; color: white; font-weight: 600;">
+                            [Article Image]
+                        </div>
+                        <div style="padding: 2.5rem;">
+                            <span class="badge pink">Design</span>
+                            <h3 style="margin-top: 1rem; font-size: 1.5rem;"><a href="#"
+                                    style="color: var(--text-dark);">Why Simplicity Wins in UI/UX</a></h3>
+                            <p>Exploring the impact of clean aesthetics and minimalist user interfaces on conversion
+                                rates.</p>
+                            <span style="font-size: 0.9rem; color: var(--text-gray);">Dec 20, 2025</span>
+                        </div>
+                    </article>
+
+                    <!-- Article 3 -->
+                    <article class="card" style="padding: 0; overflow: hidden;">
+                        <div
+                            style="height: 240px; background: linear-gradient(135deg, var(--yellow) 0%, #F9A825 100%); display: flex; align-items: center; justify-content: center; color: var(--text-dark); font-weight: 600;">
+                            [Article Image]
+                        </div>
+                        <div style="padding: 2.5rem;">
+                            <span class="badge" style="background: #F9A825;">Company</span>
+                            <h3 style="margin-top: 1rem; font-size: 1.5rem;"><a href="#"
+                                    style="color: var(--text-dark);">Ideatech Expands to Europe</a></h3>
+                            <p>We are excited to announce our new partnership network expanding into the European
+                                market.</p>
+                            <span style="font-size: 0.9rem; color: var(--text-gray);">Nov 10, 2025</span>
+                        </div>
+                    </article>
+
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <div id="footer-placeholder"></div>
+    <script src="components.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

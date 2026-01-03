@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Ideatech (PVT) LTD</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div id="header-placeholder"></div>
+
+    <main>
+        <section class="page-header visible">
+            <div class="container">
+                <div class="intro-meta">Our Work</div>
+                <h1>Selected<br>Projects.</h1>
+                <p style="font-size: 1.2rem;">A showcase of what we've built for our partners and clients.</p>
+            </div>
+
+            <!-- Wave 1 (Back, Tallest, Transparent) -->
+            <div class="wave-divider" style="bottom: 0; z-index: 1; opacity: 0.3;">
+                <svg viewBox="0 0 1200 250" preserveAspectRatio="none" style="height: 220px;">
+                    <path
+                        d="M0,150 C133,50 266,250 400,150 C533,50 666,250 800,150 C933,50 1066,250 1200,150 L1200,250 L0,250 Z"
+                        fill="var(--cream)"></path>
+                </svg>
+            </div>
+
+            <!-- Wave 2 (Middle, Medium Height, Semi-Transparent) -->
+            <div class="wave-divider" style="bottom: 0; z-index: 2; opacity: 0.6;">
+                <svg viewBox="0 0 1200 250" preserveAspectRatio="none" style="height: 180px;">
+                    <path
+                        d="M0,150 C133,50 266,250 400,150 C533,50 666,250 800,150 C933,50 1066,250 1200,150 L1200,250 L0,250 Z"
+                        fill="var(--cream)"></path>
+                </svg>
+            </div>
+
+            <!-- Wave 3 (Front, Standard, Opaque) -->
+            <div class="wave-divider" style="bottom: -1px; z-index: 3;">
+                <svg viewBox="0 0 1200 250" preserveAspectRatio="none" style="height: 140px;">
+                    <path
+                        d="M0,150 C133,50 266,250 400,150 C533,50 666,250 800,150 C933,50 1066,250 1200,150 L1200,250 L0,250 Z"
+                        fill="var(--cream)"></path>
+                </svg>
+            </div>
+        </section>
+
+        <div class="container">
+            <section id="portfolio-grid">
+                <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(360px, 1fr)); gap: 3rem;">
+                    <!-- Project 1 -->
+                    <div class="card" style="padding: 0; overflow: hidden;">
+                        <div
+                            style="height: 280px; background: linear-gradient(135deg, var(--light-green) 30%, var(--primary-green) 100%); display: flex; align-items: center; justify-content: center; color: white; font-weight: 600; font-size: 1.1rem;">
+                            [Project Screenshot]
+                        </div>
+                        <div style="padding: 2.5rem;">
+                            <span class="badge green">E-Commerce</span>
+                            <h3 style="font-size: 1.75rem; margin-top: 0.75rem;">Fashion Brand X</h3>
+                            <p>A complete digital transformation for a leading local fashion retailer, including a
+                                custom e-commerce platform and inventory management system.</p>
+                            <a href="#"
+                                style="color: var(--primary-green); font-weight: 600; margin-top: 1rem; display: inline-block;">View
+                                Case Study →</a>
+                        </div>
+                    </div>
+
+                    <!-- Project 2 -->
+                    <div class="card" style="padding: 0; overflow: hidden;">
+                        <div
+                            style="height: 280px; background: linear-gradient(135deg, var(--pink) 30%, #FF6B9D 100%); display: flex; align-items: center; justify-content: center; color: white; font-weight: 600; font-size: 1.1rem;">
+                            [Project Screenshot]
+                        </div>
+                        <div style="padding: 2.5rem;">
+                            <span class="badge pink">Mobile App</span>
+                            <h3 style="font-size: 1.75rem; margin-top: 0.75rem;">FitTrack Pro</h3>
+                            <p>A cross-platform mobile application for fitness tracking, integrating with wearable
+                                devices and health APIs.</p>
+                            <a href="#"
+                                style="color: #FF6B9D; font-weight: 600; margin-top: 1rem; display: inline-block;">View
+                                Case Study →</a>
+                        </div>
+                    </div>
+
+                    <!-- Project 3 -->
+                    <div class="card" style="padding: 0; overflow: hidden;">
+                        <div
+                            style="height: 280px; background: linear-gradient(135deg, var(--yellow) 30%, #F9A825 100%); display: flex; align-items: center; justify-content: center; color: var(--text-dark); font-weight: 600; font-size: 1.1rem;">
+                            [Project Screenshot]
+                        </div>
+                        <div style="padding: 2.5rem;">
+                            <span class="badge" style="background: #F9A825;">Web Portal</span>
+                            <h3 style="font-size: 1.75rem; margin-top: 0.75rem;">EduShare LMS</h3>
+                            <p>A scalable learning management system for a university, supporting thousands of
+                                concurrent users and live video streaming.</p>
+                            <a href="#"
+                                style="color: #F9A825; font-weight: 600; margin-top: 1rem; display: inline-block;">View
+                                Case Study →</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="testimonials" style="margin-top: var(--spacing-xxl);">
+                <div class="intro-meta text-center">Client Love</div>
+                <h2 class="text-center">Testimonials</h2>
+
+                <div class="grid">
+                    <div class="card"
+                        style="background: linear-gradient(135deg, var(--beige) 0%, #fff 100%); padding: 3rem;">
+                        <p style="color: var(--text-dark); font-size: 1.2rem; font-style: italic; line-height: 1.7;">
+                            "Ideatech transformed our digital presence. Their attention to detail and technical
+                            expertise is unmatched in the region."</p>
+                        <div style="margin-top: 2rem;">
+                            <strong style="color: var(--text-dark);">Jane Doe</strong><br>
+                            <span style="color: var(--text-gray);">Marketing Director, Company Y</span>
+                        </div>
+                    </div>
+                    <div class="card"
+                        style="background: linear-gradient(135deg, var(--beige) 0%, #fff 100%); padding: 3rem;">
+                        <p style="color: var(--text-dark); font-size: 1.2rem; font-style: italic; line-height: 1.7;">
+                            "Roam Ceylon is a game changer. The app is intuitive, fast, and exactly what the market
+                            needed."</p>
+                        <div style="margin-top: 2rem;">
+                            <strong style="color: var(--text-dark);">John Smith</strong><br>
+                            <span style="color: var(--text-gray);">Travel Blogger</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <div id="footer-placeholder"></div>
+    <script src="components.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
