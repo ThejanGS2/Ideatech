@@ -87,27 +87,40 @@
 
         <div class="container">
             <!-- Product Spotlight -->
-            <section id="spotlight">
-                <div class="intro-meta text-center">Featured Product</div>
-                <h2 class="text-center">Roam Ceylon Super App</h2>
+            <!-- Mini Game Section -->
+            <section id="mini-game-section">
+                <div class="intro-meta text-center">Take a Break</div>
+                <h2 class="text-center">Tech Challenge</h2>
 
-                <div class="accent-section">
-                    <div style="display: flex; gap: 3rem; align-items: center; flex-wrap: wrap;">
-                        <div style="flex: 1; min-width: 300px;">
-                            <span class="badge green">Tourism Innovation</span>
-                            <h3 style="font-size: 2rem; margin-bottom: 1.5rem;">The Future of Travel in Sri Lanka
-                            </h3>
-                            <p style="font-size: 1.15rem;">Smart travel assistance, local experiences, AI-powered
-                                recommendations, and seamless integrations—all in one app.</p>
-                            <a href="products.html#roam"
-                                style="color: white; font-weight: 600; text-decoration: underline; display: inline-block; margin-top: 1.5rem;">Discover
-                                More →</a>
+                <div class="game-wrapper"
+                    style="max-width: 1400px; margin: 0 auto; background: #000; padding: 20px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.2);">
+                    <div
+                        style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; color: white;">
+                        <h3 style="margin: 0; color: var(--primary-green);">Snake Game</h3>
+                        <div style="font-size: 1.5rem; font-weight: bold;">
+                            <span style="margin-right: 20px; font-size: 1rem; color: #888;">High Score: <span
+                                    id="highScore">0</span></span>
+                            Score: <span id="score">0</span>
                         </div>
-                        <div
-                            style="flex: 1; min-width: 300px; height: 500px; display: flex; align-items: center; justify-content: center; overflow: hidden;">
-                            <img src="roam-ceylon-mockup.png" alt="Roam Ceylon App Interface"
-                                style="width: 100%; height: 100%; object-fit: contain; border-radius: 24px;">
+                    </div>
+
+                    <div style="position: relative;">
+                        <canvas id="gameCanvas" width="1360" height="500"
+                            style="background: #111; border-radius: 10px; width: 100%; display: block;"></canvas>
+
+                        <!-- Start/Game Over Overlay -->
+                        <div id="gameOverlay"
+                            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.85); border-radius: 10px; display: flex; flex-direction: column; align-items: center; justify-content: center; color: white;">
+                            <h2 id="overlayTitle"
+                                style="font-size: 3rem; margin-bottom: 1rem; color: var(--primary-green);">Ready?</h2>
+                            <p style="margin-bottom: 2rem; font-size: 1.2rem;">Use Arrow Keys to Move</p>
+                            <button id="startBtn" class="btn-primary"
+                                style="font-size: 1.5rem; padding: 1rem 3rem;">Start Game</button>
                         </div>
+                    </div>
+
+                    <div style="margin-top: 20px; text-align: center; color: #888; font-size: 0.9rem;">
+                        <p>Use Arrow Keys to Navigate • Don't hit the walls!</p>
                     </div>
                 </div>
             </section>

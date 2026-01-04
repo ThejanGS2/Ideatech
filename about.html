@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
         rel="stylesheet">
+    <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
 </head>
 
 <body>
@@ -74,104 +75,117 @@
                 <div class="intro-meta text-center">Our Story</div>
                 <h2 class="text-center">Innovation from Day One</h2>
 
-                <div style="display: flex; gap: 3rem; align-items: center; flex-wrap: wrap;">
-                    <div style="flex: 2;">
-                        <p style="font-size: 1.15rem;">Ideatech (PVT) LTD began with a simple idea: that technology
-                            should be a catalyst for growth, not a barrier. Founded by a team of passionate engineers
-                            and creatives, we started as a small software house and have grown into a multi-faceted
-                            digital solutions provider.</p>
-                        <p style="font-size: 1.15rem;">From day one, our focus has been on <strong
-                                style="color: var(--primary-green);">quality</strong> and <strong
-                                style="color: var(--primary-green);">integrity</strong>. Whether we're building a simple
-                            website for a startup or a complex super-app like Roam Ceylon, we bring the same level of
-                            dedication and precision to every line of code.</p>
+                <!-- Story Content -->
+                <div style="max-width: 800px; margin: 0 auto;">
+                    <p style="font-size: 1.15rem; text-align: center;">Ideatech (PVT) LTD began with a simple idea: that
+                        technology
+                        should be a catalyst for growth, not a barrier. Founded by a team of passionate engineers
+                        and creatives, we started as a small software house and have grown into a multi-faceted
+                        digital solutions provider.</p>
+                    <p style="font-size: 1.15rem; text-align: center;">From day one, our focus has been on <strong
+                            style="color: var(--primary-green);">quality</strong> and <strong
+                            style="color: var(--primary-green);">integrity</strong>. Whether we're building a simple
+                        website for a startup or a complex super-app like Roam Ceylon, we bring the same level of
+                        dedication and precision to every line of code.</p>
+                </div>
+
+                <!-- Our Process Section -->
+                <section id="process" style="margin-top: 5rem;">
+                    <div class="intro-meta text-center">How We Work</div>
+                    <h2 class="text-center">Our Process</h2>
+                    <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem;">
+                        <div class="process-step">
+                            <div class="process-number">01</div>
+                            <h3>Discovery</h3>
+                            <p>We start by understanding your vision, goals, and user needs.</p>
+                        </div>
+                        <div class="process-step">
+                            <div class="process-number">02</div>
+                            <h3>Design</h3>
+                            <p>Crafting intuitive and beautiful interfaces that users love.</p>
+                        </div>
+                        <div class="process-step">
+                            <div class="process-number">03</div>
+                            <h3>Develop</h3>
+                            <p>Building robust, scalable solutions using cutting-edge tech.</p>
+                        </div>
+                        <div class="process-step">
+                            <div class="process-number">04</div>
+                            <h3>Launch</h3>
+                            <p>Deploying your product and ensuring a smooth liftoff.</p>
+                        </div>
                     </div>
-                    <!-- Our Process Section -->
-                    <section id="process" style="margin-top: 5rem;">
-                        <div class="intro-meta text-center">How We Work</div>
-                        <h2 class="text-center">Our Process</h2>
-                        <div class="grid"
-                            style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem;">
-                            <div class="process-step">
-                                <div class="process-number">01</div>
-                                <h3>Discovery</h3>
-                                <p>We start by understanding your vision, goals, and user needs.</p>
-                            </div>
-                            <div class="process-step">
-                                <div class="process-number">02</div>
-                                <h3>Design</h3>
-                                <p>Crafting intuitive and beautiful interfaces that users love.</p>
-                            </div>
-                            <div class="process-step">
-                                <div class="process-number">03</div>
-                                <h3>Develop</h3>
-                                <p>Building robust, scalable solutions using cutting-edge tech.</p>
-                            </div>
-                            <div class="process-step">
-                                <div class="process-number">04</div>
-                                <h3>Launch</h3>
-                                <p>Deploying your product and ensuring a smooth liftoff.</p>
-                            </div>
-                        </div>
-                    </section>
+                </section>
 
-                    <!-- Leadership Team Section -->
-                    <section id="team" style="background: var(--cream); border-radius: 48px; padding: 5rem 3rem;">
-                        <div class="intro-meta text-center">Who We Are</div>
-                        <h2 class="text-center">Leadership Team</h2>
-                        <div class="grid"
-                            style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); row-gap: 4rem;">
-                            <!-- Member 1 -->
-                            <div class="text-center">
-                                <div class="team-photo">
-                                    [Photo]
-                                </div>
-                                <h3>Alex Morgan</h3>
-                                <p style="color: var(--primary-green); font-weight: 600; margin-bottom: 0.5rem;">CEO &
-                                    Founder</p>
-                                <p>Visionary leader with 10+ years in tech innovation.</p>
+                <!-- Leadership Team Section -->
+                <section id="team" style="background: var(--cream); border-radius: 48px; padding: 5rem 3rem;">
+                    <div class="intro-meta text-center">Who We Are</div>
+                    <h2 class="text-center">Leadership Team</h2>
+                    <div class="grid"
+                        style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); row-gap: 4rem;">
+                        <!-- Member 1 -->
+                        <div class="text-center">
+                            <div class="team-photo">
+                                [Photo]
                             </div>
-                            <!-- Member 2 -->
-                            <div class="text-center">
-                                <div class="team-photo">
-                                    [Photo]
-                                </div>
-                                <h3>Sarah Chen</h3>
-                                <p style="color: var(--primary-green); font-weight: 600; margin-bottom: 0.5rem;">CTO</p>
-                                <p>Expert in scalable architecture and AI solutions.</p>
-                            </div>
-                            <!-- Member 3 -->
-                            <div class="text-center">
-                                <div class="team-photo">
-                                    [Photo]
-                                </div>
-                                <h3>David Kim</h3>
-                                <p style="color: var(--primary-green); font-weight: 600; margin-bottom: 0.5rem;">Head of
-                                    Design</p>
-                                <p>Award-winning designer focused on user-centric experiences.</p>
-                            </div>
+                            <h3>Kumudesh Weerasinghe</h3>
+                            <p style="color: var(--primary-green); font-weight: 600; margin-bottom: 0.5rem;">CEO &
+                                Founder</p>
+                            <p>Visionary leader with 10+ years in tech innovation.</p>
                         </div>
-                    </section>
-
-                    <!-- Tech Stack Section -->
-                    <section id="tech-stack" style="text-align: center;">
-                        <div class="intro-meta">Our Toolkit</div>
-                        <h2>Tech Stack</h2>
-                        <p style="max-width: 600px; margin: 0 auto 3rem;">We use the best tools in the industry to build
-                            reliable and future-proof software.</p>
-
-                        <div
-                            style="display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem; max-width: 900px; margin: 0 auto;">
-                            <div class="tech-icon">React</div>
-                            <div class="tech-icon">Node.js</div>
-                            <div class="tech-icon">Python</div>
-                            <div class="tech-icon">AWS</div>
-                            <div class="tech-icon">Flutter</div>
-                            <div class="tech-icon">Docker</div>
-                            <div class="tech-icon">GraphQL</div>
-                            <div class="tech-icon">PostgreSQL</div>
+                        <!-- Member 2 -->
+                        <div class="text-center">
+                            <div class="team-photo">
+                                [Photo]
+                            </div>
+                            <h3>Ulindu Vibodha</h3>
+                            <p style="color: var(--primary-green); font-weight: 600; margin-bottom: 0.5rem;">CTO</p>
+                            <p>Expert in scalable architecture and AI solutions.</p>
                         </div>
-                    </section>
+                        <!-- Member 3 -->
+                        <div class="text-center">
+                            <div class="team-photo">
+                                [Photo]
+                            </div>
+                            <h3>David Kim</h3>
+                            <p style="color: var(--primary-green); font-weight: 600; margin-bottom: 0.5rem;">Head of
+                                Design</p>
+                            <p>Award-winning designer focused on user-centric experiences.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Tech Stack Section -->
+                <section id="tech-stack" style="text-align: center;">
+                    <div class="intro-meta">Our Toolkit</div>
+                    <h2>Tech Stack</h2>
+                    <p style="max-width: 600px; margin: 0 auto 3rem;">We use the best tools in the industry to build
+                        reliable and future-proof software.</p>
+
+                    <div class="tech-marquee">
+                        <div class="marquee-track">
+                            <!-- First Set -->
+                            <i class="devicon-react-original colored" title="React"></i>
+                            <i class="devicon-nodejs-plain colored" title="Node.js"></i>
+                            <i class="devicon-python-plain colored" title="Python"></i>
+                            <i class="devicon-amazonwebservices-plain-wordmark colored" title="AWS"></i>
+                            <i class="devicon-flutter-plain colored" title="Flutter"></i>
+                            <i class="devicon-docker-plain colored" title="Docker"></i>
+                            <i class="devicon-graphql-plain colored" title="GraphQL"></i>
+                            <i class="devicon-postgresql-plain colored" title="PostgreSQL"></i>
+
+                            <!-- Duplicate Set for smooth scrolling -->
+                            <i class="devicon-react-original colored" title="React"></i>
+                            <i class="devicon-nodejs-plain colored" title="Node.js"></i>
+                            <i class="devicon-python-plain colored" title="Python"></i>
+                            <i class="devicon-amazonwebservices-plain-wordmark colored" title="AWS"></i>
+                            <i class="devicon-flutter-plain colored" title="Flutter"></i>
+                            <i class="devicon-docker-plain colored" title="Docker"></i>
+                            <i class="devicon-graphql-plain colored" title="GraphQL"></i>
+                            <i class="devicon-postgresql-plain colored" title="PostgreSQL"></i>
+                        </div>
+                    </div>
+                </section>
             </section>
 
             <section id="timeline">
