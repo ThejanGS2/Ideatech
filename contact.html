@@ -103,7 +103,16 @@
 
                 <section id="contact-form-section">
                     <h2>Send a Message</h2>
-                    <form class="contact-form">
+                    <form class="contact-form"
+                          action="https://formsubmit.co/ideatechofficialpvt@gmail.com"
+                          method="POST">
+                        <!-- Honeypot to help reduce spam -->
+                        <input type="text" name="_honey" style="display:none">
+                        <!-- Customize email subject sent to your inbox -->
+                        <input type="hidden" name="_subject" value="New message from Ideatech website">
+                        <!-- Redirect after successful submission -->
+                        <input type="hidden" name="_next" value="thank-you.html">
+
                         <div class="form-group">
                             <label for="name">Full Name</label>
                             <input type="text" id="name" name="name" required placeholder="John Doe">
@@ -127,6 +136,7 @@
 
                         <button type="submit" class="btn-submit">Send Message</button>
                     </form>
+                    <!-- Note: on first submission Formsubmit.co will send a verification email to activate forwarding -->
                 </section>
 
             </div>
