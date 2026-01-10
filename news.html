@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News & Insights - Ideatech (PVT) LTD</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <div id="header-placeholder"></div>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero-section visible">
+            <div class="container">
+                <div class="intro-meta">Latest Updates</div>
+                <h1>News & Insights</h1>
+                <p style="max-width: 600px; margin: 1.5rem auto 2.5rem; font-size: 1.2rem;">
+                    Stay updated with the latest trends, innovations, and news from IdeaTech.
+                </p>
+            </div>
+            <!-- Wave Divider -->
+            <div class="wave-divider">
+                <svg viewBox="0 0 1200 250" preserveAspectRatio="none">
+                    <path d="M0,100 C300,200 500,50 600,100 C700,150 900,0 1200,100 L1200,250 L0,250 Z"
+                        fill="var(--cream)"></path>
+                </svg>
+            </div>
+        </section>
+
+        <!-- News Cards Section -->
+        <section class="news-section">
+            <div class="container">
+                <div id="news-loading" class="loading-state">
+                    <div class="spinner"></div>
+                    <p>Loading news articles...</p>
+                </div>
+                <div id="news-error" class="error-state" style="display: none;">
+                    <p>Unable to load news articles. Please try again later.</p>
+                </div>
+                <div id="news-grid" class="news-grid">
+                    <!-- News cards will be dynamically inserted here -->
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="components.js"></script>
+    <script src="script.js"></script>
+    <script>
+        // Contentful Configuration
+        const SPACE_ID = 'cr2v5nbc0rx2';
+        const ACCESS_TOKEN = 'qmEA1IrWGYo8EfA_C8tK9wZqWUS8kLWt4QymemY1O4k';
+        const CONTENT_TYPE = 'news';
+
+        // Fetch news from Contentful
+        async function fetchNews() {
+            const loadingEl = document.getElementById('news-loading');
+            const errorEl = document.getElementById('news-error');
+            const gridEl = document.getElementById('news-grid');
+
+            try {
+                const response = await fetch(
+                    `https://cdn.contentful.com/spaces/${SPACE_ID}/entries?access_token=${ACCESS_TOKEN}&content_type=${CONTENT_TYPE}&order=-fields.date`
+                );
+
+                if (!response.ok) {
+                    throw new Error('Failed to fetch news');
+                }
+
+                const data = await response.json();
+
+                // Hide loading
+                loadingEl.style.display = 'none';
+
+                if (data.items.length === 0) {
+                    gridEl.innerHTML = '<p style="text-align: center; color: var(--text-gray);">No news articles available at the moment.</p>';
+                    return;
+                }
+
+                // Display news cards
+                displayNewsCards(data.items, data.includes);
+
+            } catch (error) {
+                console.error('Error fetching news:', error);
+                loadingEl.style.display = 'none';
+                errorEl.style.display = 'block';
+            }
+        }
+
+        // Display news cards
+        function displayNewsCards(items, includes) {
+            const gridEl = document.getElementById('news-grid');
+            gridEl.innerHTML = '';
+
+            items.forEach(item => {
+                const fields = item.fields;
+                const card = createNewsCard(fields, includes);
+                gridEl.appendChild(card);
+            });
+        }
+
+        // Create individual news card
+        function createNewsCard(fields, includes) {
+            const card = document.createElement('article');
+            card.className = 'news-card';
+
+            // Get thumbnail URL
+            let thumbnailUrl = '';
+            if (fields.thumbnail && fields.thumbnail.sys) {
+                const assetId = fields.thumbnail.sys.id;
+                const asset = includes.Asset.find(a => a.sys.id === assetId);
+                if (asset && asset.fields.file) {
+                    thumbnailUrl = 'https:' + asset.fields.file.url;
+                }
+            }
+
+            // Format date
+            const date = fields.date ? new Date(fields.date).toLocaleDateString('en-US', {
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric'
+            }) : '';
+
+            card.innerHTML = `
+                <div class="news-card-image">
+                    ${thumbnailUrl ? `<img src="${thumbnailUrl}" alt="${fields.title || 'News thumbnail'}" loading="lazy">` : '<div class="placeholder-image">No Image</div>'}
+                </div>
+                <div class="news-card-content">
+                    <div class="news-card-date">${date}</div>
+                    <h3 class="news-card-title">${fields.title || 'Untitled'}</h3>
+                    <p class="news-card-description">${fields.shortDescription || ''}</p>
+                    <a href="newstemplate.html?slug=${fields.slug}" class="news-card-btn">Read More</a>
+                </div>
+            `;
+
+            return card;
+        }
+
+        // Initialize on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            fetchNews();
+        });
+    </script>
+
+</body>
+
+</html>

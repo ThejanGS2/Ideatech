@@ -23,6 +23,7 @@ function loadComponents() {
                             <li><a href="services.html">Services</a></li>
                             <li><a href="portfolio.html">Portfolio</a></li>
                             <li><a href="products.html">Products</a></li>
+                            <li><a href="news.html">News</a></li>
                             <li><a href="about.html">About Us</a></li>
                             <li><a href="contact.html">Contact Us</a></li>
                         </ul>
