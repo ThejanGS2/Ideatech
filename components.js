@@ -78,7 +78,6 @@ function loadComponents() {
                         <h4>Company</h4>
                         <ul>
                             <li><a href="about.html">About Us</a></li>
-                            <li><a href="board.html">Leadership</a></li>
                             <li><a href="careers.html">Careers</a></li>
                             <li><a href="contact.html">Contact</a></li>
                         </ul>
