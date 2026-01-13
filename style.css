@@ -564,7 +564,7 @@ section.visible {
 .footer-col h3 {
   color: var(--white);
   margin-bottom: var(--spacing-md);
-  font-family: var(--font-display);
+  font-family: sans-serif;
 }
 
 .footer-col h4 {
@@ -573,7 +573,7 @@ section.visible {
   text-transform: uppercase;
   letter-spacing: 0.1em;
   margin-bottom: var(--spacing-md);
-  font-family: var(--font-display);
+  font-family: sans-serif;
 }
 
 .footer-col ul {
@@ -587,7 +587,7 @@ section.visible {
 .footer-col a {
   color: #cccccc;
   transition: color var(--transition);
-  font-family: var(--font-body);
+  font-family: sans-serif;
 }
 
 .footer-col a:hover {
@@ -602,7 +602,7 @@ section.visible {
   align-items: center;
   color: var(--text-gray);
   font-size: 0.9rem;
-  font-family: var(--font-body);
+  font-family: sans-serif;
 }
 
 .legal-links {
