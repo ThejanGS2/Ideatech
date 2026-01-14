@@ -68,13 +68,9 @@
 
     <script src="components.js"></script>
     <script src="script.js"></script>
+    <script src="config.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@contentful/rich-text-html-renderer@16.0.2/dist/rich-text-html-renderer.es5.min.js"></script>
     <script>
-        // Contentful Configuration
-        const SPACE_ID = 'cr2v5nbc0rx2';
-        const ACCESS_TOKEN = 'qmEA1IrWGYo8EfA_C8tK9wZqWUS8kLWt4QymemY1O4k';
-        const CONTENT_TYPE = 'news';
-
         // Get slug from URL
         function getSlugFromURL() {
             const urlParams = new URLSearchParams(window.location.search);
@@ -95,7 +91,7 @@
 
             try {
                 const response = await fetch(
-                    `https://cdn.contentful.com/spaces/${SPACE_ID}/entries?access_token=${ACCESS_TOKEN}&content_type=${CONTENT_TYPE}&fields.slug=${slug}`
+                    `https://cdn.contentful.com/spaces/${CONFIG.CONTENTFUL.SPACE_ID}/entries?access_token=${CONFIG.CONTENTFUL.ACCESS_TOKEN}&content_type=${CONFIG.CONTENTFUL.CONTENT_TYPE}&fields.slug=${slug}`
                 );
 
                 if (!response.ok) {

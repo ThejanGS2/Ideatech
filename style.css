@@ -2,20 +2,20 @@
 
 :root {
   /* Colors - Vibrant Palette */
-  --primary-green: #4CAF50;
-  --dark-green: #2E7D32;
-  --light-green: #C8E6C9;
-  --cream: #FFF8E7;
-  --beige: #F5F0E8;
-  --pink: #FFE5EC;
-  --yellow: #FFF9C4;
+  --primary-green: #4caf50;
+  --dark-green: #2e7d32;
+  --light-green: #c8e6c9;
+  --cream: #fff8e7;
+  --beige: #f5f0e8;
+  --pink: #ffe5ec;
+  --yellow: #fff9c4;
   --text-dark: #1a1a1a;
   --text-gray: #666666;
   --white: #ffffff;
 
   /* Typography */
-  --font-display: 'Cambria', 'Georgia', serif;
-  --font-body: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-display: "Cambria", "Georgia", serif;
+  --font-body: "Inter", system-ui, -apple-system, sans-serif;
 
   /* Spacing */
   --spacing-xs: 0.5rem;
@@ -160,8 +160,20 @@ section.visible {
   position: relative;
   max-width: 100%;
   margin: 0 auto;
-  mask-image: linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%);
-  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%);
+  mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 5%,
+    black 95%,
+    transparent 100%
+  );
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 5%,
+    black 95%,
+    transparent 100%
+  );
 }
 
 .marquee-track {
@@ -312,6 +324,7 @@ section.visible {
   overflow: hidden;
   line-height: 0;
   z-index: 1;
+  pointer-events: none;
 }
 
 .wave-divider svg {
@@ -400,7 +413,6 @@ section.visible {
   border-radius: 0;
 }
 
-
 /* Page Header */
 .page-header {
   padding: 12rem 0 10rem;
@@ -486,7 +498,7 @@ section.visible {
 }
 
 .feature-list li::before {
-  content: '✓';
+  content: "✓";
   position: absolute;
   left: 0;
   color: var(--primary-green);
@@ -533,12 +545,14 @@ section.visible {
   overflow: hidden;
   line-height: 0;
   z-index: 1;
+  pointer-events: none;
 }
 
 .footer-wave-svg {
   display: block;
   width: 100%;
   height: 100%;
+  pointer-events: none;
 }
 
 .footer-grid {
@@ -697,7 +711,7 @@ section.visible {
 }
 
 .badge.pink {
-  background: #FF6B9D;
+  background: #ff6b9d;
 }
 
 /* Mobile Responsive */
@@ -747,7 +761,7 @@ section.visible {
   }
 
   .main-nav::before {
-    content: '';
+    content: "";
     position: fixed;
     top: 0;
     left: 0;
@@ -815,6 +829,29 @@ section.visible {
   .grid {
     grid-template-columns: 1fr;
   }
+
+  /* Disable hover effects on mobile for news cards */
+  .news-card:hover {
+    transform: none;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  }
+
+  .news-card:hover .news-card-image img {
+    transform: none;
+  }
+
+  .news-card-btn:hover {
+    transform: none;
+    background: var(--primary-green);
+  }
+
+  /* Ensure button is clickable on mobile */
+  .news-card-btn {
+    min-height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 }
 
 /* Utilities */
@@ -856,8 +893,12 @@ section.visible {
 }
 
 @keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 .error-state {
@@ -884,13 +925,21 @@ section.visible {
   overflow: hidden;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
   transition: transform var(--transition), box-shadow var(--transition);
-  display: flex;
   flex-direction: column;
+  pointer-events: auto;
+  position: relative;
+  z-index: 1;
 }
 
-.news-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+@media (hover: hover) and (pointer: fine) {
+  .news-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+  }
+
+  .news-card:hover .news-card-image img {
+    transform: scale(1.1);
+  }
 }
 
 .news-card-image {
@@ -908,10 +957,7 @@ section.visible {
   height: 100%;
   object-fit: cover;
   transition: transform 0.5s ease;
-}
-
-.news-card:hover .news-card-image img {
-  transform: scale(1.1);
+  pointer-events: none;
 }
 
 .placeholder-image {
@@ -966,11 +1012,25 @@ section.visible {
   text-align: center;
   transition: background var(--transition), transform var(--transition);
   align-self: flex-start;
+  position: relative;
+  z-index: 10;
+  cursor: pointer;
+  -webkit-tap-highlight-color: rgba(76, 175, 80, 0.3);
+  touch-action: manipulation;
+  pointer-events: auto;
+  text-decoration: none;
 }
 
-.news-card-btn:hover {
+@media (hover: hover) and (pointer: fine) {
+  .news-card-btn:hover {
+    background: var(--dark-green);
+    transform: translateX(4px);
+  }
+}
+
+.news-card-btn:active {
   background: var(--dark-green);
-  transform: translateX(4px);
+  transform: scale(0.98);
 }
 
 /* ==================== NEWS ARTICLE TEMPLATE STYLES ==================== */
