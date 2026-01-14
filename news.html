@@ -58,12 +58,8 @@
 
     <script src="components.js"></script>
     <script src="script.js"></script>
+    <script src="config.js"></script>
     <script>
-        // Contentful Configuration
-        const SPACE_ID = 'cr2v5nbc0rx2';
-        const ACCESS_TOKEN = 'qmEA1IrWGYo8EfA_C8tK9wZqWUS8kLWt4QymemY1O4k';
-        const CONTENT_TYPE = 'news';
-
         // Fetch news from Contentful
         async function fetchNews() {
             const loadingEl = document.getElementById('news-loading');
@@ -72,7 +68,7 @@
 
             try {
                 const response = await fetch(
-                    `https://cdn.contentful.com/spaces/${SPACE_ID}/entries?access_token=${ACCESS_TOKEN}&content_type=${CONTENT_TYPE}&order=-fields.date`
+                    `https://cdn.contentful.com/spaces/${CONFIG.CONTENTFUL.SPACE_ID}/entries?access_token=${CONFIG.CONTENTFUL.ACCESS_TOKEN}&content_type=${CONFIG.CONTENTFUL.CONTENT_TYPE}&order=-fields.date`
                 );
 
                 if (!response.ok) {
