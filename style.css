@@ -846,6 +846,37 @@ section.visible {
   }
 }
 
+/* Prevent accidental horizontal scrolling and make large decorative SVGs/canvas responsive */
+html, body {
+  overflow-x: hidden;
+}
+
+svg {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Fix specific elements that previously caused overflow on small screens */
+.wave-track {
+  width: 100%;
+  left: 0;
+  transform: none !important;
+}
+
+.wave-divider svg {
+  width: 100% !important;
+  max-width: 100%;
+}
+
+/* Make the game canvas scale within its container on small screens */
+#gameCanvas {
+  width: 100% !important;
+  height: auto !important;
+  max-width: 100%;
+  display: block;
+}
+
 /* Utilities */
 .text-center {
   text-align: center;
