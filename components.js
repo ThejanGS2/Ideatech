@@ -128,9 +128,55 @@ function initMobileMenu() {
     const nav = document.querySelector('.main-nav');
 
     if (toggle && nav) {
-        toggle.addEventListener('click', () => {
-            nav.classList.toggle('active');
-            toggle.classList.toggle('active');
+        // Ensure ARIA attributes and initial hidden state on small screens
+        if (!nav.id) nav.id = 'site-main-nav';
+        toggle.setAttribute('aria-controls', nav.id);
+
+        const setHiddenState = (hidden) => {
+            if (hidden) {
+                nav.classList.remove('active');
+                toggle.classList.remove('active');
+                nav.setAttribute('aria-hidden', 'true');
+                toggle.setAttribute('aria-expanded', 'false');
+            } else {
+                nav.classList.add('active');
+                toggle.classList.add('active');
+                nav.setAttribute('aria-hidden', 'false');
+                toggle.setAttribute('aria-expanded', 'true');
+            }
+        };
+
+        // Hide on load for mobile widths
+        if (window.innerWidth <= 768) setHiddenState(true);
+
+        toggle.addEventListener('click', (e) => {
+            const isOpen = nav.classList.contains('active');
+            // Toggle: if open, hide; if closed, show
+            setHiddenState(isOpen);
+            e.stopPropagation();
+        });
+
+        // Close when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!nav.classList.contains('active')) return;
+            const target = e.target;
+            if (!nav.contains(target) && !toggle.contains(target)) {
+                setHiddenState(true);
+            }
+        });
+
+        // Close on Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && nav.classList.contains('active')) {
+                setHiddenState(true);
+            }
+        });
+
+        // Ensure nav hides when resizing to mobile
+        window.addEventListener('resize', () => {
+            if (window.innerWidth <= 768 && nav.classList.contains('active')) {
+                setHiddenState(true);
+            }
         });
     }
 }

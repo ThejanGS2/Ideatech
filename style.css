@@ -2,20 +2,20 @@
 
 :root {
   /* Colors - Vibrant Palette */
-  --primary-green: #4caf50;
-  --dark-green: #2e7d32;
-  --light-green: #c8e6c9;
-  --cream: #fff8e7;
-  --beige: #f5f0e8;
-  --pink: #ffe5ec;
-  --yellow: #fff9c4;
+  --primary-green: #4CAF50;
+  --dark-green: #2E7D32;
+  --light-green: #C8E6C9;
+  --cream: #FFF8E7;
+  --beige: #F5F0E8;
+  --pink: #FFE5EC;
+  --yellow: #FFF9C4;
   --text-dark: #1a1a1a;
   --text-gray: #666666;
   --white: #ffffff;
 
   /* Typography */
-  --font-display: "Cambria", "Georgia", serif;
-  --font-body: "Inter", system-ui, -apple-system, sans-serif;
+  --font-display: 'Cambria', 'Georgia', serif;
+  --font-body: 'Inter', system-ui, -apple-system, sans-serif;
 
   /* Spacing */
   --spacing-xs: 0.5rem;
@@ -160,20 +160,8 @@ section.visible {
   position: relative;
   max-width: 100%;
   margin: 0 auto;
-  mask-image: linear-gradient(
-    to right,
-    transparent 0%,
-    black 5%,
-    black 95%,
-    transparent 100%
-  );
-  -webkit-mask-image: linear-gradient(
-    to right,
-    transparent 0%,
-    black 5%,
-    black 95%,
-    transparent 100%
-  );
+  mask-image: linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%);
 }
 
 .marquee-track {
@@ -324,7 +312,6 @@ section.visible {
   overflow: hidden;
   line-height: 0;
   z-index: 1;
-  pointer-events: none;
 }
 
 .wave-divider svg {
@@ -413,6 +400,7 @@ section.visible {
   border-radius: 0;
 }
 
+
 /* Page Header */
 .page-header {
   padding: 12rem 0 10rem;
@@ -498,7 +486,7 @@ section.visible {
 }
 
 .feature-list li::before {
-  content: "✓";
+  content: '✓';
   position: absolute;
   left: 0;
   color: var(--primary-green);
@@ -545,14 +533,12 @@ section.visible {
   overflow: hidden;
   line-height: 0;
   z-index: 1;
-  pointer-events: none;
 }
 
 .footer-wave-svg {
   display: block;
   width: 100%;
   height: 100%;
-  pointer-events: none;
 }
 
 .footer-grid {
@@ -711,7 +697,7 @@ section.visible {
 }
 
 .badge.pink {
-  background: #ff6b9d;
+  background: #FF6B9D;
 }
 
 /* Mobile Responsive */
@@ -723,6 +709,11 @@ section.visible {
 
   .main-header {
     padding: 0.75rem 0.5rem;
+  }
+
+  body {
+    overflow-x: hidden;
+    position: relative;
   }
 
   .nav-container {
@@ -760,41 +751,33 @@ section.visible {
     transform: rotate(-45deg) translate(7px, -7px);
   }
 
+  /* Remove overlay that was tinting the menu */
   .main-nav::before {
-    content: "";
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background: rgba(0, 0, 0, 0.5);
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.3s, visibility 0.3s;
-    z-index: -1;
-  }
-
-  .main-nav.active::before {
-    opacity: 1;
-    visibility: visible;
+    content: none;
   }
 
   .main-nav {
     position: fixed;
     top: 0;
-    right: -100%;
+    right: 0;
+    transform: translateX(100%);
     width: 280px;
     max-width: 85%;
     height: 100vh;
     background: var(--white);
     padding: 6rem 2rem 2rem;
-    transition: right 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     box-shadow: -10px 0 30px rgba(0, 0, 0, 0.15);
     overflow-y: auto;
+    z-index: 1000;
+    will-change: transform;
+    visibility: hidden;
+    background: var(--white);
   }
 
   .main-nav.active {
-    right: 0;
+    transform: translateX(0);
+    visibility: visible;
   }
 
   .nav-links {
@@ -893,12 +876,8 @@ section.visible {
 }
 
 @keyframes spin {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
 
 .error-state {
@@ -925,10 +904,9 @@ section.visible {
   overflow: hidden;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
   transition: transform var(--transition), box-shadow var(--transition);
+  display: flex;
   flex-direction: column;
   pointer-events: auto;
-  position: relative;
-  z-index: 1;
 }
 
 @media (hover: hover) and (pointer: fine) {
