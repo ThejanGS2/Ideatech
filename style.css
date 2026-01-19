@@ -711,6 +711,14 @@ section.visible {
     padding: 0.75rem 0.5rem;
   }
 
+  /* Contact page two-column grid -> single column on mobile */
+  .two-col-contact-grid {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+    display: grid !important;
+    align-items: start !important;
+  }
+
   body {
     overflow-x: hidden;
     position: relative;
