@@ -1,3 +1,29 @@
+// Inject favicon and touch icon so every page using `components.js` gets it automatically
+(function injectFavicon() {
+    try {
+        const head = document.head || document.getElementsByTagName('head')[0];
+        if (!head) return;
+        // remove any existing favicons we might replace
+        const old = head.querySelectorAll('link[rel~="icon"], link[rel="shortcut icon"], link[rel="apple-touch-icon"]');
+        old.forEach(n => n.parentNode && n.parentNode.removeChild(n));
+
+        const link = document.createElement('link');
+        link.rel = 'icon';
+        link.href = 'ideatech-icon.png';
+        link.type = 'image/png';
+        head.appendChild(link);
+
+        const apple = document.createElement('link');
+        apple.rel = 'apple-touch-icon';
+        apple.href = 'ideatech-icon.png';
+        apple.sizes = '180x180';
+        head.appendChild(apple);
+    } catch (e) {
+        // non-fatal
+        console.warn('Favicon injection failed', e);
+    }
+})();
+
 document.addEventListener('DOMContentLoaded', () => {
     loadComponents();
 });
@@ -62,7 +88,7 @@ function loadComponents() {
                                     <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
                                 </svg>
                             </a>
-                            <a href="https://www.linkedin.com/company/idea-tech-pvt-ltd/posts/?feedView=all" aria-label="LinkedIn">
+                            <a href="https://www.linkedin.com/company/idea-tech-pvt-ltd/" aria-label="LinkedIn">
                                 <svg class="social-icon" viewBox="0 0 24 24">
                                     <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
                                 </svg>
@@ -78,7 +104,6 @@ function loadComponents() {
                         <h4>Company</h4>
                         <ul>
                             <li><a href="about.html">About Us</a></li>
-                            <li><a href="careers.html">Careers</a></li>
                             <li><a href="contact.html">Contact</a></li>
                         </ul>
                     </div>
@@ -100,11 +125,6 @@ function loadComponents() {
                 </div>
                 <div class="footer-bottom container">
                     <p>&copy; 2026 Nutzy Craft. All Rights Reserved.</p>
-                    <div class="legal-links">
-                        <a href="faq.html">FAQ</a>
-                        <a href="#">Privacy Policy</a>
-                        <a href="#">Terms</a>
-                    </div>
                 </div>
             </footer>
         `;
